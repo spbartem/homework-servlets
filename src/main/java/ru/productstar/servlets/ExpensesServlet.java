@@ -24,7 +24,6 @@ public class ExpensesServlet extends HttpServlet {
 
         int freeMoney = (int) context.getAttribute("freeMoney");
         for (var k : req.getParameterMap().keySet()) {
-            if (req.getParameter(k).equals("")) { throw new NullPointerException("Expense is empty"); }
             int value = Integer.parseInt(req.getParameter(k));
             freeMoney -= value;
             transactions.add(new Transaction(k, value, TypeOfOpertion.EXPENSE));

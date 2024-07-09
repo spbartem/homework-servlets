@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>ru.productstar.servlets</groupId>
-    <artifactId>workshop-servlets</artifactId>
+    <artifactId>homework-servlets</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
