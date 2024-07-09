@@ -16,17 +16,13 @@ public class ErrorHandlerServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
-
-        //Вариант 1
-        //resp.getWriter().println("Error (" + req.getAttribute(ERROR_STATUS_CODE) + ") - " + req.getAttribute(ERROR_MESSAGE));
-
-        //Вариант 2
         resp.setContentType("text/html; charset=utf-8");
         try (PrintWriter writer = resp.getWriter()) {
             writer.write("<html><head><title>Error</title>" +
                     "<link rel=\"stylesheet\" href=\"../styles.css\"></head><body>");
             writer.write("<img src=\"../images/monkey.png\" alt=\"Monkey\">");
-            writer.write("<b>Error (" + req.getAttribute(ERROR_STATUS_CODE) + ")</b> - " + req.getAttribute(ERROR_MESSAGE));
+            writer.write("<b>Error (" + req.getAttribute(ERROR_STATUS_CODE) + ")</b> - "
+                    + req.getAttribute(ERROR_MESSAGE));
             writer.write("</html></body>");
         }
     }
